@@ -21,6 +21,7 @@ import org.apache.rocketmq.common.namesrv.NamesrvConfig;
 import org.apache.rocketmq.remoting.netty.NettyServerConfig;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -46,13 +47,11 @@ public class NameServerInstanceTest {
         //maybe need to clean the file store. But we do not suggest deleting anything.
     }
 
-    public static void main(String[] args) throws Exception {
-        NamesrvConfig namesrvConfig = new NamesrvConfig();
-        NettyServerConfig nettyServerConfig = new NettyServerConfig();
-        nettyServerConfig.setListenPort(9876);
-        NamesrvController namesrvController = new NamesrvController(namesrvConfig, nettyServerConfig);
-        namesrvController.initialize();
-        namesrvController.start();
+    /**
+     * nameserver 启动类，调试用
+     */
+    @Test
+    public void nameServerTest() throws InterruptedException {
         Thread.sleep(DateUtils.MILLIS_PER_DAY);
     }
 }
